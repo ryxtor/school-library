@@ -24,6 +24,10 @@ $ `git clone https://github.com/ryxtor/school-library.git`
 
 $ `cd school-library`
 
+- Run the code:
+  
+  $ `ruby main.rb`
+  
 ## Author
 
 |    👤    | **Lucas Bonnefon**                                             |
