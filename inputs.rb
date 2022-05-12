@@ -44,4 +44,26 @@ module Inputs
     end
     option
   end
+
+  def index_in(array, message: 'Select by index', error: 'Index out of range. Try again')
+    puts "\n"
+    loop do
+      index = int_input(message: message) - 1
+      value = array[index]
+      return index if value
+
+      puts error
+    end
+  end
+
+  def enter_date
+    puts "\n"
+    loop do
+      puts 'Enter date in the following format YYYY/MM/DD'
+      date = gets.chomp
+      return date if date.match(%r{([0-9]){4}/[0-1][0-9]/[0-3][0-9]})
+
+      puts 'Wrong input'
+    end
+  end
 end

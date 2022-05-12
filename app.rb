@@ -2,9 +2,10 @@ require './book'
 require './inputs'
 require './student'
 require './teacher'
+require './rental'
 
 class App
- include Inputs
+  include Inputs
 
   def initialize
     @persons = []
@@ -75,8 +76,41 @@ class App
   end
 
   def create_rental
+    puts "\n"
+    if books.empty? || persons.empty?
+      puts 'Not enough parameters to create rental'
+      return
+    end
+    list_all_books
+    index_book = index_in(books, message: 'Select a book from the following list by number')
+    book = books[index_book]
+    list_all_persons
+    index_persons = index_in(persons, message: 'Select a person from the following list by number (not id)')
+    person = persons[index_persons]
+    date = enter_date
+    Rental.new(date, person, book)
   end
 
   def list_rentals
+    list_all_persons
+    loop do
+      id = int_input(message: 'ID of person:')
+      selected_person = nil
+      persons.each do |person|
+        if person.id == id
+          selected_person = person
+          break
+        end
+      end
+      unless selected_person
+        puts "Couldn't find ID. Try again"
+        next
+      end
+      puts 'Rentals:'
+      selected_person.rentals.each do |rent|
+        puts "Date: #{rent.date} Book \"#{rent.book.title}\" by #{rent.book.author}"
+      end
+      break
+    end
   end
 end
