@@ -14,9 +14,16 @@ class App
   attr_accessor :persons, :books
 
   def list_all_books
+    puts "\n"
+    books.each_with_index do |book, index|
+      puts "[#{index + 1}] Title: #{book.title}, Author: #{book.author}"
+    end
   end
 
   def list_all_persons
+    persons.each_with_index do |person, index|
+      puts "[#{index + 1}][#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    end
   end
 
   def create_student
@@ -64,7 +71,7 @@ class App
     title = str_input(message: 'Title:')
     author = str_input(message: 'Author:')
     book = Book.new(title, author)
-    @books.push(book)
+    books.push(book)
   end
 
   def create_rental
