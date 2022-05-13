@@ -34,7 +34,7 @@ class App
                     error: 'Wrong input.')
     student_permission = 'true'
     student_permission = bool_input(message: 'Does the student have permission? (Y/N)') if age < 18
-    Student.new(age, name, student_permission)
+    Student.new(age, name, student_permission, create_student)
   end
 
   def create_teacher
