@@ -28,13 +28,18 @@ $ `cd school-library`
   
   $ `ruby main.rb`
   
-## Author
+## Authors
 
 |    👤    | **Lucas Bonnefon**                                             |
 | ------------ | ----------------------------------------------------        |
 | **GitHub**   | [@Lucas Bonnefon](https://github.com/ryxtor)                |
 | **Twitter**  | [@Lucas Bonnefon](https://twitter.com/ryxtor)              |
 | **LinkedIn** | [Lucas Bonnefon](https://www.linkedin.com/in/lucasbonnefon/)|
+
+|    👤    | **Francisco Ponce**                                             |
+| ------------ | ----------------------------------------------------        |
+| **GitHub**   | [@franciscoPonceDev](https://github.com/franciscoPonceDev)  |
+| **LinkedIn** | [Francisco Ponce](https://www.linkedin.com/in/dev-ponce/)   |
 
 ## 🤝 Contributing
 
