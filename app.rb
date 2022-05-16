@@ -50,12 +50,12 @@ class App
     loop do
       puts "\n"
       puts 'Do you want to create a student [1] or a teacher [2]? [Input the number]:'
-      selection = gets.chomp
+      selection = int_input
       person = nil
       case selection
-      when '1'
+      when 1
         person = create_student
-      when '2'
+      when 2
         person = create_teacher
       else
         puts 'Wrong value'
