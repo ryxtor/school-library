@@ -2,7 +2,7 @@ require './app'
 require './menu'
 require './run'
 require './exit_app'
-require './initialize_app.rb'
+require './initialize_app'
 def main
   app = App.new
   initialize_app(app)
