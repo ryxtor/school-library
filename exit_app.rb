@@ -3,13 +3,22 @@ require 'json'
 
 def exit_app(app)
   files = ['books.json', 'persons.json', 'rentals.json']
-  booklist = []
-  # create method to check if files exists
-  # Exists : delete or modify file and write to it
-  # Don't exists: create file and write to it
+
   files.each do |file|
     File.new(file, 'w') unless File.exist?(file)
   end
+
+  save_books(app)
+  save_persons(app)
+end
+
+def create_file(file)
+  File.new(file, 'w')
+end
+
+def save_books(app)
+  booklist = []
+
   app.books.each do |book|
     b = { Title: book.title, Author: book.author, Id: book.id }
     booklist << b
@@ -17,6 +26,18 @@ def exit_app(app)
   File.write('books.json', booklist.to_json)
 end
 
-def create_file(file)
-  File.new(file, 'w')
+def save_persons(app)
+  people = []
+
+  app.persons.each do |person|
+    if person.instance_of?(Student)
+      s = { age: person.age, name: person.name, parent_permission: person.parent_permission, id: person.id }
+      people << s
+    else
+      t = { specialization: person.specialization, age: person.age, name: person.name,
+            parent_permission: person.parent_permission, id: person.id }
+      people << t
+    end
+  end
+  File.write('persons.json', people.to_json)
 end
