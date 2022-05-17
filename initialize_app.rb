@@ -5,6 +5,7 @@ require './app'
 def initialize_app(app)
   load_books(app)
   load_people(app)
+  load_rentals(app)
 end
 
 def load_books(app)
@@ -32,5 +33,15 @@ def load_people(app)
                                      person['id'])
       app.persons.push(existing_student)
     end
+  end
+end
+
+def load_rentals(app)
+  rentals_to_create = JSON.parse(File.read('rentals.json'))
+  rentals_to_create.each do |rental|
+    existing_rental = Rental.new(rental['date'],
+                                 rental['person'],
+                                 rental['book'])
+    app.rentals.push(existing_rental)
   end
 end

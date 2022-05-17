@@ -10,6 +10,7 @@ def exit_app(app)
 
   save_books(app)
   save_persons(app)
+  save_rentals(app)
 end
 
 def create_file(file)
@@ -40,4 +41,14 @@ def save_persons(app)
     end
   end
   File.write('persons.json', people.to_json)
+end
+
+def save_rentals(app)
+  rentals = []
+
+  app.rentals.each do |rental|
+    r = { date: rental.date, person: rental.person, book: rental.book }
+    rentals << r
+  end
+  File.write('rentals.json', rentals.to_json)
 end
