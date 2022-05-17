@@ -39,7 +39,11 @@ end
 def load_rentals(app)
   rentals_to_create = JSON.parse(File.read('rentals.json'))
   rentals_to_create.each do |rental|
+    renter = app.persons[rental['person']]
+    book = app.books[rental['book']]
     existing_rental = Rental.new(rental['date'],
+                                 renter,
+                                 book,
                                  rental['person'],
                                  rental['book'])
     app.rentals.push(existing_rental)

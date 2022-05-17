@@ -47,7 +47,7 @@ def save_rentals(app)
   rentals = []
 
   app.rentals.each do |rental|
-    r = { date: rental.date, person: rental.person, book: rental.book }
+    r = { date: rental.date, person: rental.index_person, book: rental.index_book }
     rentals << r
   end
   File.write('rentals.json', rentals.to_json)

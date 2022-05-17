@@ -89,7 +89,7 @@ class App
     index_persons = index_in(persons, message: 'Select a person from the following list by number (not id)')
     person = persons[index_persons]
     date = enter_date
-    rental = Rental.new(date, person, book)
+    rental = Rental.new(date, person, book, index_book, index_persons)
     rentals.push(rental)
   end
 
