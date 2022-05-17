@@ -2,8 +2,10 @@ require './app'
 require './menu'
 require './run'
 require './exit_app'
+require './initialize_app.rb'
 def main
   app = App.new
+  initialize_app(app)
   print_hello
   loop do
     print_message
