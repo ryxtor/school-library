@@ -8,7 +8,7 @@ def main
   loop do
     print_message
     selection = gets.chomp
-    exit_app if selection == '7'
+    exit_app(app) if selection == '7'
     puts 'Thank you for using this app!' if selection == '7'
     break if selection == '7'
 
