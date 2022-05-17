@@ -10,9 +10,10 @@ class App
   def initialize
     @persons = []
     @books = []
+    @rentals = []
   end
 
-  attr_accessor :persons, :books
+  attr_accessor :persons, :books, :rentals
 
   def list_all_books
     puts "\n"
@@ -88,7 +89,8 @@ class App
     index_persons = index_in(persons, message: 'Select a person from the following list by number (not id)')
     person = persons[index_persons]
     date = enter_date
-    Rental.new(date, person, book)
+    rental = Rental.new(date, person, book, index_book, index_persons)
+    rentals.push(rental)
   end
 
   def list_rentals
