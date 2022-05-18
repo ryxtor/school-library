@@ -34,6 +34,5 @@ class Person < Nameable
     Rental.new(date, self, book)
   end
 
-  public :can_use_services?
-  private :of_age?
+  public :can_use_services?, :of_age?
 end
