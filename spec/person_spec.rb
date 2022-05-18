@@ -13,8 +13,13 @@ describe Person do
     it 'Check if it is of age' do
       expect(@person.of_age?).to be true
     end
-    it 'Check if the name is the same' do
-      expect(@person.name).to eq 'Lucas'
+
+    it 'Check if the correct name is the same as name' do
+      expect(@person.correct_name).to eq 'Lucas'
+    end
+
+    it 'Check if can use services' do
+      expect(@person.can_use_services?).to be true
     end
   end
 end
