@@ -4,7 +4,6 @@ describe Student do
   before :each do
     @student = Student.new 17, 'Francisco'
     @classroom = Classroom.new 'Label'
-
   end
   describe '#new' do
     it 'Return a new Student object' do
