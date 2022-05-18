@@ -1,4 +1,4 @@
-require './nameable.rb'
+require './nameable'
 
 describe Nameable do
   before :each do
