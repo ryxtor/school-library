@@ -30,10 +30,9 @@ class Person < Nameable
     @name
   end
 
-  def add_rental(date, book)
-    Rental.new(date, self, book)
+  def add_rental(date, book, index_book, index_person)
+    Rental.new(date, self, book, index_book, index_person)
   end
 
-  public :can_use_services?
-  private :of_age?
+  public :can_use_services?, :of_age?
 end
